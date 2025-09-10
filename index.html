@@ -8,6 +8,11 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
         integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <title>Document</title>
 </head>
@@ -15,26 +20,42 @@
 <body>
     <header>
         <div class="navbar">
-            <div class="logo"><a href="">Web Dev</a></div>
+            <div class="logo"><a href="">Zakarie</a></div>
             <ul class="links">
-                <li><a href="hero">Home</a></li>
-                <li><a href="about">About</a></li>
-                <li><a href="services">Services</a></li>
-                <li><a href="Contact">Contact</a></li>
+                <li id="Home">Home</li>
+                <li id="About">About</li>
+                <li id="services">Services</li>
+                <li id="Contact">Contact</li>
             </ul>
-            <a href="" class="action_btn">Get Started</a>
             <div class="toggle_btn">
                 <i class="fa-solid fa-bars-staggered"></i>
             </div>
         </div>
         <div class="dropdown_menu">
-            <li><a href="hero">Home</a></li>
-            <li><a href="about">About</a></li>
-            <li><a href="services">Services</a></li>
-            <li><a href="Contact">Contact</a></li>
-            <li> <a href="" class="action_btn">Get Started</a></li>
+            <li id="Home">Home</li>
+            <li id="About">About</li>
+            <li id="services">Services</li>
+            <li id="Contact">Contact</li>
         </div>
     </header>
+    <div class="hero">
+        <h1>Hi, <br> I'am <span class="name">Zakarie</span><br>A network engineer</h1>
+
+    </div>
+
+    <div class="contact_btn">Contact me</div>
+
+    <div class="social-icons">
+        <a href="https://wa.me/252615383096"><i class="fa-brands fa-whatsapp"></i></a>
+    </div>
+    <div class="social-icons2">
+        <a href="https://X.com/@a_nor24"><i class="fa-brands fa-x-twitter"></i></a>
+    </div>
+    <div class="social-icons3">
+        <a href="https://stsaamir86@gmail.com"><i class="fa-solid fa-envelope"></i></a>
+    </div>
+
+
 
     <script>
         const toggleBtn = document.querySelector('.toggle_btn')
@@ -50,7 +71,6 @@
                 : 'fa-solid fa-bars-staggered'
         }
     </script>
-
 </body>
 
 </html>

@@ -2,15 +2,15 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'open sans', sans-serif;
+    font-family: 'Montserrat';
 }
 
 body {
     height: 100vh;
-    background-color: #000;
-    background-image: url(backgroud\ image.jpg);
-    background-size: cover;
-    background-position: center;
+    background-color: #fff;
+    /* background-color: blue;
+    width: fit-content;
+    height: 2px; padding-bottom: 2px; */
 }
 
 li {
@@ -19,17 +19,18 @@ li {
 
 a {
     text-decoration: none;
-    color: #fff;
+    color: #000;
     font-size: 1rem;
 }
 
-a:hover {
+li:hover {
     color: orange;
 }
 
 header {
     position: relative;
-    padding: 0 2rem;
+    padding: 0 10rem;
+    box-shadow: 0 1px 5px rgba(146, 161, 176, 0.15);
 }
 
 .navbar {
@@ -43,8 +44,8 @@ header {
 }
 
 .navbar .logo a {
-    font-size: 1.5rem;
-    font-weight: bold;
+    color: #000;
+
 }
 
 .navbar .links {
@@ -53,30 +54,10 @@ header {
 }
 
 .navbar .toggle_btn {
-    color: #fff;
+    color: #000;
     cursor: pointer;
     display: none;
 
-}
-
-.action_btn {
-    background-color: orange;
-    padding: 0.5rem 1rem;
-    border: none;
-    outline: none;
-    border-radius: 20px;
-    font-size: 0.8rem;
-    font-weight: bold;
-    transition: scale 0.2 ease;
-}
-
-.action_btn:hover {
-    scale: 1.05;
-    color: #fff;
-}
-
-.action_btn:active {
-    scale: 0.95;
 }
 
 .dropdown_menu {
@@ -85,36 +66,99 @@ header {
     right: 2rem;
     top: 60px;
     height: 0;
-    width: 300px;
-    background: rgba(255, 255, 255, 0.1);
+    width: 50%;
+    background: rgb(68, 178, 215);
     backdrop-filter: blur(15px);
     border-radius: 10px;
     overflow: hidden;
-    transition: height .2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
 }
 
 .dropdown_menu.open {
-    height: 500px;
+    height: 100vh;
+    overflow: hidden;
 }
 
-.dropdown_menu .action_btn {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-}
+
 
 .dropdown_menu li {
     padding: 0.7rem;
     display: flex;
+    justify-content: flex-start;
+
+}
+
+.dropdown_menu li {
+    color: #fff;
+    font-size: 1.2rem;
+    font-weight: 500;
+    padding-left: 1rem;
+    padding-top: 0.5rem;
+
+}
+
+.hero h1 {
+    color: #000;
+    display: block;
+    padding: 0 10rem;
+    padding-top: 8rem;
+    font-size: 2.5rem;
+    row-gap: 5rem;
+
+}
+
+.hero .name {
+    color: rgb(68, 178, 215);
+}
+
+.contact_btn {
+    margin-left: 10rem;
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+    width: fit-content;
+    background-color: rgb(68, 178, 215);
+    color: #fff;
+    border-radius: 10px;
+    cursor: pointer;
+    display: inline-block;
+}
+
+.contact_btn:hover {
+    background-color: orange;
+    transform: scale(1.1);
+    transition: all 0.3s ease-in-out;
+}
+
+.social-icons,
+.social-icons2,
+.social-icons3 {
+    display: inline-flex;
+    gap: 2rem;
     align-items: center;
-    justify-content: center;
+    margin-left: 2rem;
+    padding-top: 1rem;
+    padding-left: 0;
+}
+
+.social-icons:hover,
+.social-icons2:hover,
+.social-icons3:hover {
+    cursor: pointer;
+    color: orange;
+    transform: scale(1.5);
+    transition: all 0.3s ease-in-out;
+}
+
+.social-icons .social-icons2 .social-icons3:hover {
+    cursor: pointer;
+    color: orange;
+    scale: 1.05;
 
 }
 
 @media(max-width:992px) {
 
-    .navbar .links,
-    .navbar .action_btn {
+    .navbar .links {
         display: none;
     }
 
@@ -125,11 +169,51 @@ header {
     .dropdown_menu {
         display: block;
     }
+
+    .hero h1 {
+        font-size: 2rem;
+        padding-left: 2.5rem;
+
+    }
+
+    header {
+        padding: 0 2.5rem;
+    }
+
+    .contact_btn {
+        margin-left: 2.5rem;
+    }
+
+    .social-icons,
+    .social-icons2,
+    .social-icons3 {
+        margin-left: 2.5rem;
+    }
+
 }
 
 @media(max-width:576px) {
     .dropdown_menu {
-        left: 2rem;
-        width: unset;
+        right: 2rem;
+        width: 50%;
+
     }
+
+
+
+    .hero h1 {
+        font-size: 1.5rem;
+    }
+}
+
+@media(max-width:450px) {
+
+
+    .hero h1 {
+        font-size: 1.2rem;
+        padding-left: 2.5rem;
+        padding-top: 5rem;
+    }
+
+
 }
