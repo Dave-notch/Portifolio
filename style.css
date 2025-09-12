@@ -197,7 +197,7 @@ body {
 .section-title {
     display: flex;
     justify-content: center;
-    margin-top: 5rem;
+    margin-top: 3rem;
     cursor: pointer;
     font-size: 1.3rem;
     padding: 20px;
@@ -248,7 +248,7 @@ body {
 @media(max-width:992px) {
 
     .navbar .links {
-        display: block;
+        display: none;
     }
 
     .navbar .toggle_btn {
