@@ -8,29 +8,63 @@
 body {
     height: 100vh;
     background-color: #fff;
-    /* background-color: blue;
-    width: fit-content;
-    height: 2px; padding-bottom: 2px; */
-}
 
-li {
-    list-style: none;
 }
 
 a {
     text-decoration: none;
     color: #000;
-    font-size: 1rem;
 }
 
-li:hover {
-    color: orange;
+ul {
+    list-style: none;
+}
+
+
+li a {
+    display: inline-block;
+    position: relative;
+
+}
+
+li a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    height: 2px;
+    width: 0;
+    background: rgb(68, 178, 215);
+    transition: width 0.3s ease-in-out;
+}
+
+li a:hover {
+    color: rgb(68, 178, 215);
+    cursor: pointer;
+    transform: scale(1.1);
+    transition: all 0.3s ease-in-out;
+}
+
+li a:hover::after {
+    width: 100%;
 }
 
 header {
-    position: relative;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 60px;
     padding: 0 10rem;
     box-shadow: 0 1px 5px rgba(146, 161, 176, 0.15);
+    background: rgba(255, 255, 255, 0.95);
+    z-index: 999;
+    display: flex;
+    align-items: center;
+}
+
+body {
+    padding-top: 60px;
 }
 
 .navbar {
@@ -53,6 +87,7 @@ header {
     gap: 2rem;
 }
 
+
 .navbar .toggle_btn {
     color: #000;
     cursor: pointer;
@@ -63,7 +98,7 @@ header {
 .dropdown_menu {
     display: none;
     position: absolute;
-    right: 2rem;
+    right: -2rem;
     top: 60px;
     height: 0;
     width: 50%;
@@ -71,12 +106,19 @@ header {
     backdrop-filter: blur(15px);
     border-radius: 10px;
     overflow: hidden;
+    color: #fff;
+}
+
+
+.dropdown_menu a:hover {
+    color: #fff;
 
 }
 
+
 .dropdown_menu.open {
     height: 100vh;
-    overflow: hidden;
+    transition: all 0.3s ease-in-out;
 }
 
 
@@ -103,7 +145,8 @@ header {
     padding: 0 10rem;
     padding-top: 8rem;
     font-size: 2.5rem;
-    row-gap: 5rem;
+    row-gap: 8rem;
+    width: 100%;
 
 }
 
@@ -133,33 +176,79 @@ header {
 .social-icons2,
 .social-icons3 {
     display: inline-flex;
-    gap: 2rem;
     align-items: center;
-    margin-left: 2rem;
-    padding-top: 1rem;
-    padding-left: 0;
+    margin-left: 10rem;
+    padding-top: 3rem;
+    color: black;
+
 }
 
 .social-icons:hover,
 .social-icons2:hover,
 .social-icons3:hover {
     cursor: pointer;
-    color: orange;
     transform: scale(1.5);
     transition: all 0.3s ease-in-out;
+    margin-bottom: 10px;
 }
 
-.social-icons .social-icons2 .social-icons3:hover {
-    cursor: pointer;
-    color: orange;
-    scale: 1.05;
 
+
+.section-title {
+    display: flex;
+    justify-content: center;
+    margin-top: 5rem;
+    cursor: pointer;
+    font-size: 1.3rem;
+    padding: 20px;
+    position: relative;
+}
+
+
+.section-title::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: 15px;
+    transform: translateX(-60%) scaleX(0);
+    transform-origin: center;
+    width: 6%;
+    height: 2px;
+    background: rgb(68, 178, 215);
+    border-radius: 2px;
+    transition: transform 0.25s ease-in-out;
+}
+
+
+.section-title:hover::after {
+    transform: translateX(-50%) scaleX(1);
+}
+
+.about_img img {
+    display: flex;
+    margin-top: 3rem;
+    margin-left: 6.5rem;
+    width: 200px;
+    height: 300px;
+    border-radius: 20px;
+    object-fit: cover;
+    border: 1px solid rgb(68, 178, 215);
+
+}
+
+.about_me {
+    display: flex;
+    justify-content: center;
+    margin-top: -10rem;
+    font-size: 1.2rem;
+    padding: 0 30rem;
+    text-align: flex-start;
 }
 
 @media(max-width:992px) {
 
     .navbar .links {
-        display: none;
+        display: block;
     }
 
     .navbar .toggle_btn {
@@ -168,6 +257,7 @@ header {
 
     .dropdown_menu {
         display: block;
+        color: #fff;
     }
 
     .hero h1 {
@@ -188,8 +278,19 @@ header {
     .social-icons2,
     .social-icons3 {
         margin-left: 2.5rem;
+        display: block;
     }
 
+}
+
+
+
+
+
+.about_img {
+    width: 150px;
+    height: 200px;
+    margin-left: 2.5rem;
 }
 
 @media(max-width:576px) {
@@ -206,6 +307,8 @@ header {
     }
 }
 
+
+
 @media(max-width:450px) {
 
 
@@ -214,6 +317,44 @@ header {
         padding-left: 2.5rem;
         padding-top: 5rem;
     }
+
+    .about_img img {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 140px;
+        height: 160px;
+        margin-top: 0;
+
+
+
+    }
+
+    .about_me {
+        font-size: 1rem;
+        margin-left: 3rem;
+        display: inline-block;
+        padding: 0 1rem;
+        text-align: center;
+        margin-top: 1px;
+        text-align: flex-start;
+    }
+
+    .hero h1 {
+        padding: 70px;
+        padding-left: 2.5rem;
+        font-size: 30px;
+        margin-top: 5rem;
+
+
+    }
+
+    li a {
+        color: #fff;
+    }
+
+
+
 
 
 }
