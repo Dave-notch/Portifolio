@@ -95,10 +95,11 @@ body {
 
 }
 
+
 .dropdown_menu {
     display: none;
     position: absolute;
-    right: -2rem;
+    right: 4rem;
     top: 60px;
     height: 0;
     width: 50%;
@@ -117,7 +118,7 @@ body {
 
 
 .dropdown_menu.open {
-    height: 100vh;
+    height: 100dvh;
     transition: all 0.3s ease-in-out;
 }
 
@@ -165,6 +166,11 @@ body {
     cursor: pointer;
     display: inline-block;
 }
+.mainContent{
+    height: 100vh;
+    width: 100dvh;
+  
+}
 
 .contact_btn:hover {
     background-color: orange;
@@ -172,20 +178,19 @@ body {
     transition: all 0.3s ease-in-out;
 }
 
-.social-icons,
-.social-icons2,
-.social-icons3 {
+.social-icons{
     display: inline-flex;
     align-items: center;
     margin-left: 10rem;
     padding-top: 3rem;
     color: black;
+    gap: 4rem;
 
 }
 
-.social-icons:hover,
-.social-icons2:hover,
-.social-icons3:hover {
+.icon1:hover,
+.icon2:hover,
+.icon3:hover{
     cursor: pointer;
     transform: scale(1.5);
     transition: all 0.3s ease-in-out;
@@ -194,9 +199,10 @@ body {
 
 
 
-.section-title {
+.section-title a li{
     display: flex;
     justify-content: center;
+    align-items: center;
     margin-top: 3rem;
     cursor: pointer;
     font-size: 1.3rem;
@@ -205,23 +211,23 @@ body {
 }
 
 
-.section-title::after {
+.section-title a::after {
     content: "";
     position: absolute;
-    left: 50%;
-    bottom: 15px;
-    transform: translateX(-60%) scaleX(0);
-    transform-origin: center;
-    width: 6%;
+    left: 0;
+    bottom: -4px;
     height: 2px;
+    width: 0;
     background: rgb(68, 178, 215);
-    border-radius: 2px;
-    transition: transform 0.25s ease-in-out;
+    transition: width 0.3s ease-in-out;
 }
 
 
-.section-title:hover::after {
-    transform: translateX(-50%) scaleX(1);
+.section-title a:hover::after {
+    color: rgb(68, 178, 215);
+    cursor: pointer;
+    transform: scale(1.1);
+    transition: all 0.3s ease-in-out;
 }
 
 .about_img img {
@@ -247,6 +253,9 @@ body {
 
 @media(max-width:992px) {
 
+    .social-icons a{
+        color: #000;
+    }
     .navbar .links {
         display: none;
     }
@@ -257,6 +266,11 @@ body {
 
     .dropdown_menu {
         display: block;
+        color: #fff;
+        
+    }
+    
+    a{
         color: #fff;
     }
 
@@ -295,8 +309,10 @@ body {
 
 @media(max-width:576px) {
     .dropdown_menu {
-        right: 2rem;
+        right: 0;
         width: 50%;
+        color: white;
+        /* max-width: 100%; */
 
     }
 
@@ -310,7 +326,9 @@ body {
 
 
 @media(max-width:450px) {
-
+    .toggle_btn{
+        margin-right: 0.5rem;
+    }
 
     .hero h1 {
         font-size: 1.2rem;
