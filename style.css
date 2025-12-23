@@ -118,7 +118,7 @@ body {
 
 
 .dropdown_menu.open {
-    height: 100dvh;
+    
     transition: all 0.3s ease-in-out;
 }
 
